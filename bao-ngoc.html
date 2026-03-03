@@ -1,11 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
+<title>Opening Google Sheets...</title>
+
 <script>
-window.location.href = "https://docs.google.com/spreadsheets/d/1q1mx8dkGyq12lIveJx6huxLmt2gZyziJkaC-ppl0xlU/edit?usp=sharing";
+(function () {
+
+  // Google Sheets App Deep Link
+  var appLink =
+    "googlesheets://docs.google.com/spreadsheets/d/1q1mx8dkGyq12lIveJx6huxLmt2gZyziJkaC-ppl0xlU/edit";
+
+  // Fallback Web Link
+  var webLink =
+    "https://docs.google.com/spreadsheets/d/1q1mx8dkGyq12lIveJx6huxLmt2gZyziJkaC-ppl0xlU/edit?usp=drivesdk";
+
+  // Try opening the app first
+  window.location.href = appLink;
+
+  // If app not installed → open browser after delay
+  setTimeout(function () {
+    window.location.href = webLink;
+  }, 1500);
+
+})();
 </script>
+
 </head>
+
 <body>
-Opening Zalo...
+Opening Google Sheets...
 </body>
 </html>
